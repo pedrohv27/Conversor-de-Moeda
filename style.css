@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #8c52fd;
+}
+
+
+.logo1 {
+    width: 200px;
+    height: 200px;;
+    margin: 20px auto;
+}
+
+main {
+    margin: 0 auto;
+    border: 1px solid #8c52fd;
+    border-radius: 15px;
+    background-color: #F4F4F4;
+    width: 375px;
+    padding: 44px 24px 23px;
+
+}
+
+
+label {
+    display: block;
+    font-weight: 400;
+    line-height: 18px;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+select {
+   display: block;
+   width: 327px;
+   height: 48px;
+   border-radius: 4px;
+   margin-bottom: 24px;
+   color: #555;
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 18px;
+   padding-left: 6px;
+   appearance: none;
+}
+
+input {
+   display: block;
+   width: 327px;
+   height: 48px;
+   border-radius: 4px;
+   border: 1px solid #BBB;
+   padding-left: 6px;
+   margin-bottom: 23px;
+   color: #555;
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 18px;
+   appearance: none;
+}
+
+button {
+   width: 327px;
+   height: 48px;
+   border-radius: 5px;
+   background: #772FD3;
+   font-weight: 700;
+   line-height: 18px; 
+   font-size: 18px;
+   color: #FFF;
+   border: none;
+   margin-bottom: 26px;
+   cursor: pointer;
+}
+
+button:hover {
+     opacity: 0.6;
+}
+
+button:active {
+    background: #8c60c6;
+}
+
+
+section {
+   width: 327px;
+   height: 276px;
+   border-radius: 20px;
+   border: 1px solid #772FD3;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding: 13px 100px;
+}
+
+div {
+   display: flex;
+   align-items: center;
+   flex-direction: column; 
+}
+
+.logo-brasil {
+   width: 44px;
+   height: 44px;
+}
+
+.nomeDaMoeda {
+   color: #777;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 18px;
+   margin-bottom: 5px;
+}
+
+.imagem-seta {
+   width: 35px;
+   height: 40px;
+   margin-top: 15px;
+   margin-bottom: 14px;
+}
+
+.logo-estdosunidos {
+   width: 40px;
+   height: 40px;
+}
+
+.valorDaMoeda1, .valorDaMoeda2 {
+   color: #555;
+   font-size: 20px;
+   font-weight: 700;
+   line-height: 18px;
+}
+
+
+
+
+
