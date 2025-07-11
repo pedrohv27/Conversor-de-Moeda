@@ -16,7 +16,44 @@ function convertValues() {
     const libraToday = 7.4
     const bitcoinToday = 594000;
 
-    //CONVERSAO DE DOLAR
+    
+    if (currencySelect.value == "real") {
+        if (currencySelect1.value == "real1") {
+            alert("Selecione moedas diferentes para converter")
+        }
+
+        if (currencySelect1.value == "dolar1") {
+            const result02 = input * dolarToday
+            valor2.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            }).format(result02)
+        }
+
+        if (currencySelect1.value == "euro1") {
+            const result03 = input * euroToday
+            valor2.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            }).format(result03)
+        }
+
+         if (currencySelect1.value == "libra1") {
+            const result04 = input * libraToday
+            valor2.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            }).format(result04)
+         }
+
+           if (currencySelect1.value == "bitcoin1") {
+             valor2.innerHTML = (input * bitcoinToday).toFixed(8) + " BTC";
+        }
+
+    }
+
+
+     //CONVERSAO DE DOLAR
 
     if (currencySelect.value == "dolar") {
         if (currencySelect1.value == "real1") {
@@ -46,6 +83,10 @@ function convertValues() {
                 style: "currency",
                 currency: "USD"
             }).format(result3)
+        }
+
+        if (currencySelect1.value == "bitcoin1") {
+              valor2.innerHTML = (input * 115784 ).toFixed(8) + " BTC";
         }
     }
 
@@ -81,32 +122,80 @@ function convertValues() {
             }).format(result23)
         }
 
+         if (currencySelect1.value == "bitcoin1") {
+              valor2.innerHTML = (input * 115859  ).toFixed(8) + " BTC";
+        }
+
     }
 
     // CONVERSAO DA LIBRA 
 
     if (currencySelect.value == "libra") {
-        valor2.innerHTML = new Intl.NumberFormat("en-GB", {
-            style: "currency",
-            currency: "GBP"
-        }).format(input / libraToday)
+        if (currencySelect1.value == "real1") {
+            const result31 = input / libraToday
+            valor2.innerHTML = new Intl.NumberFormat("en-GB", {
+                style: "currency",
+                currency: "GBP"
+            }).format(result31)
+        }
+
+        if (currencySelect1.value == "dolar1") {
+            const result32 = input / 1.35
+            valor2.innerHTML = new Intl.NumberFormat("en-GB", {
+                style: "currency",
+                currency: "GBP"
+            }).format(result32)
+        }
+
+        if (currencySelect1.value == "euro1") {
+            const result33 = input / 1.15
+            valor2.innerHTML = new Intl.NumberFormat("en-GB", {
+                style: "currency",
+                currency: "GBP"
+            }).format(result33)
+        }
+
+        if (currencySelect1.value == "libra1") {
+            alert("Selecione moedas diferentes para converter!")
+            return
+        }
+
+        
+         if (currencySelect1.value == "bitcoin1") {
+              valor2.innerHTML = (input * 115868).toFixed(8) + " BTC";
+        }
+
     }
+
 
     //CONVRESAO DO BITCOIN 
 
     if (currencySelect.value == "bitcoin") {
-        valor2.innerHTML = (input / bitcoinToday).toFixed(8) + " BTC";
-    }
+        if (currencySelect1.value == "real1") {
+            valor2.innerHTML = (input / bitcoinToday).toFixed(8) + " BTC";
+        }
 
-    // ALTERAR DEPOIS
-    valor1.innerHTML = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    }).format(input)
+        if (currencySelect1.value == "dolar1") {
+            valor2.innerHTML = (input / 115784).toFixed(8) + " BTC";
+        }
+
+        if (currencySelect1.value == "euro1") {
+            valor2.innerHTML = (input / 115859).toFixed(8) + " BTC";
+        }
+
+        if (currencySelect1.value == "libra1") {
+            valor2.innerHTML = (input / 115868).toFixed(8) + " BTC";
+        }
+
+        if (currencySelect1.value == "bitcoin1") {
+            alert("Selecione moedas diferentes para converter!")
+            return
+        }
+    }
 
 }
 
-    // FORMATAÇAO DOS VALORES DO SELECT 1, É ATIVA SÓ QUANDO A UM CLICK NO BOTAO
+// FORMATAÇAO DOS VALORES DO SELECT 1, É ATIVA SÓ QUANDO A UM CLICK NO BOTAO
 
 function convertValues1() {
     const input = document.querySelector(".input-value").value
@@ -138,42 +227,57 @@ function convertValues1() {
             currency: "GBP"
         }).format(input)
     }
+
+    if (currencySelect1.value == "bitcoin1") {
+        valor1.innerHTML = (input).toFixed(8) + " BTC";
+    }
 }
 
 
-    //ALTERACAO DA IMAGEM E DO TEXTO, DA LOGO E DO TEXTO SUPERIOR DA CURRENCY BOX, SÓ ACONTECE QUANDO A UMA ALTERAÇAO NO SELETOR 1
-    
+//ALTERACAO DA IMAGEM E DO TEXTO, DA LOGO E DO TEXTO SUPERIOR DA CURRENCY BOX, SÓ ACONTECE QUANDO A UMA ALTERAÇAO NO SELETOR 1
+
 function changeCurrency1() {
     const nomeMoeda1 = document.getElementById("moeda-name1")
     const img1 = document.querySelector(".imagem1")
 
     if (currencySelect1.value == "real1") {
+        nomeMoeda1.innerHTML = "Real Brasileiro"
         img1.src = "./assets/brasil.png"
-        nomeMoeda1.innerHTML = "R$ Real Brasileiro"
     }
 
     if (currencySelect1.value == "dolar1") {
+        nomeMoeda1.innerHTML = "Dólar AM"
         img1.src = "./assets/estados-unidos.png"
-        nomeMoeda1.innerHTML = "US$ Dólar AM"
     }
 
     if (currencySelect1.value == "euro1") {
-        img1.src = "./assets/euro.png"
         nomeMoeda1.innerHTML = "Euro"
+        img1.src = "./assets/euro.png"
     }
 
     if (currencySelect1.value == "libra1") {
-        img1.src = "./assets/libra.png"
         nomeMoeda1.innerHTML = "Libra"
+        img1.src = "./assets/libra.png"
+    }
+
+    if (currencySelect1.value == "bitcoin1") {
+        nomeMoeda1.innerHTML = "Bitcoin"
+        valor1.style.fontSize = "14px"
+        img1.src = "./assets/bitcoin.png"
     }
 }
 
 
-     //ALTERACAO DA IMAGEM E DO TEXTO, DA LOGO E DO TEXTO INFERIOR DA CURRENCY BOX, SÓ ACONTECE QUANDO A UMA ALTERAÇAO NO SELETOR 1
+//ALTERACAO DA IMAGEM E DO TEXTO, DA LOGO E DO TEXTO INFERIOR DA CURRENCY BOX, SÓ ACONTECE QUANDO A UMA ALTERAÇAO NO SELETOR 1
 
 function changeCurrency() {
     const moedaName = document.getElementById("moeda-name")
     const img2 = document.querySelector(".imagem2")
+
+    if (currencySelect.value == "real") {
+        moedaName.innerHTML = "Real Brasileiro"
+        img2.src = "./assets/brasil.png"
+    }
 
 
     if (currencySelect.value == "dolar") {
